@@ -1,3 +1,23 @@
+Fork:
+
+steps to get wion device to toggle: 
+
+- docker build
+- change ip address to point to the wion device in src/main.rs:12
+- uncomment discovery process to find the device ID in src/main.rs:15
+- compile and run to find the device id e.g "ECO-7808276B"
+- convert device id to hex code using http://www.online-toolz.com/tools/text-hex-convertor.php 
+- example: "ECO-7808276B" converts to "45434f2d3738303832373642" and formatted to "0x45, 0x43, 0x4f, 0x2d, 0x37, 0x38, 0x30, 0x38, 0x32, 0x37, 0x36, 0x42"
+- insert hex code in src/wion_comm.rs:380 and src/wion_comm.rs:401
+- comment back line src/main.rs:15
+- uncomment code for toggling src/main.rs:32
+- compile and run
+- light should toggle 
+
+
+
+Original Documentation
+
 <h1>WiOn SmartSwitch/Outlet (KAB enterprises protocol) Implementation</h1>
 
 <img src="https://github.com/superhac/wion/blob/master/docs/imgs/wion_switch.jpg" align=right alt="WiOn Switch" style="width:150px;height:228px;">

@@ -9,7 +9,7 @@ use std::thread;
 use std::time;
 
 fn main() {
-    let switch_ip = "192.168.0.248";
+    let switch_ip = "192.168.0.102"; // TODO(hbt): replace by env var
 
     // discover devices - Done
     if false {
@@ -23,13 +23,13 @@ fn main() {
     let msg_sock = wion_comm::msg_listener_setup();
 
     // get switch status -- Done
-    if false {
+    if true {
         wion_comm::get_switch_status( switch_ip, &msg_sock);
         thread::sleep(time::Duration::from_millis(5000));
     }
 
     // toggle a switch by IP addr -- DONE
-    if false {
+    if true {
         wion_comm::send_switch_toggle(true,  switch_ip, &msg_sock);
         thread::sleep(time::Duration::from_millis(5000));
         wion_comm::send_switch_toggle(false,  switch_ip, &msg_sock);
@@ -50,7 +50,7 @@ fn main() {
 
     //get nightlamp settings
 
-    if true {
+    if false {
         wion_comm::get_nightlamp_settings( switch_ip, &msg_sock);
         thread::sleep(time::Duration::from_millis(5000));
     }

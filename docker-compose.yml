@@ -1,0 +1,13 @@
+version: '3.4'
+
+services: 
+  wion:
+    container_name: wion
+    build:  
+      context: . 
+    image: hbtlabs/wion
+    working_dir: /wionc
+    entrypoint: /wionc/target/release/wion
+    volumes:
+      - .:/wion
+      
