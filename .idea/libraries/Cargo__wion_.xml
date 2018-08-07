@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Cargo &lt;wion&gt;">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-0.3.5" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.3.22" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/rand-0.4.2" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/fuchsia-zircon-0.3.3" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/byteorder-1.2.4" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/libc-0.2.43" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/fuchsia-zircon-sys-0.3.3" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-x86_64-pc-windows-gnu-0.4.0" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/winapi-i686-pc-windows-gnu-0.4.0" />
+      <root url="file://$USER_HOME$/.cargo/registry/src/github.com-1ecc6299db9ec823/bitflags-1.0.3" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
