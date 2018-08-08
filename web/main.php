@@ -4,7 +4,7 @@
 /**
  * controls timer. Every X minutes, wion device is On then off for Y minutes
  * 
- * Run it with cron: "* * * * * /home/hassen/wion/web/main.php"
+ * Run it with cron: "* * * * * /home/hassen/wion/web/main.php >> /tmp/ac.log"
  * 
  * Change wion device in getDeviceName
  * 

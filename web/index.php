@@ -3,6 +3,9 @@
 /**
  * web UI
  * 
+ * php -S 0.0.0.0:8989 index.php
+ * 
+ * 
  */
 
 include(__DIR__ . DIRECTORY_SEPARATOR . 'lib.php');
@@ -14,6 +17,7 @@ function main()
 
 main();
 
+var_dump(getState());
 if(array_key_exists('cmd', $_GET))
 {
     $cmd = ($_GET['cmd']);
@@ -22,7 +26,7 @@ if(array_key_exists('cmd', $_GET))
     $args = explode(' ', $cmd);
     
     
-    $argv = array_merge([''],  explode(' ', $cmd));
+    $argv = array_merge(['main.php'],  explode(' ', $cmd));
     timerCLI($argv);
     
 }

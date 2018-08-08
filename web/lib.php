@@ -164,7 +164,7 @@ function viewLog()
 
 function getDeviceName()
 {
-    return 'lt';
+    return 'wion';
 }
 
 function getBinPath()
