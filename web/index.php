@@ -33,7 +33,7 @@ if(array_key_exists('cmd', $_GET))
 
 ?>
 <html>
-<body>
+<body style="background-color: black; color: white">
 
 <h1>
     
