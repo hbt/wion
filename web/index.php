@@ -35,6 +35,8 @@ if(array_key_exists('cmd', $_GET))
 <html>
 <body>
 
+<h1>
+    
 <br/>
 <br/>
 
@@ -58,6 +60,8 @@ if(array_key_exists('cmd', $_GET))
 <a href="./index.php?cmd=set 20 20">Set 20 20</a>
 <br/>
 <br/>
+    
+</h1>
 
 </body>
 </html>
