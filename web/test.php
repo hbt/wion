@@ -31,6 +31,12 @@ function main($argv)
             assert(getState()['interval'] == [30 * 60, 30 * 60]);
         },
 
+        'curl2'            => function ()
+        {
+            echo shell_exec('curl http://localhost:8989/index.php?cmd=start');
+            assert(getState()['ac']);
+        },
+
         'start timer'     => function ()
         {
             runMain(['start']);

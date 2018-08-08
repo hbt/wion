@@ -109,19 +109,15 @@ function getDefaultMap()
 function start_timer()
 {
     logmsg('start timer');
-    $state          = getState();
-    $state['timer'] = true;
+    syncState(['timer' => true, 'last_check' => time()]);
     turnOn();
-    $state['last_check'] = time();
-    setState($state);
 }
 
 
 function stop_timer()
 {
     $state          = getState();
-    $state['timer'] = false;
-    setState($state);
+    syncState(['timer' => false]);
     turnOff();
 }
 
@@ -164,7 +160,7 @@ function viewLog()
 
 function getDeviceName()
 {
-    return 'wion';
+    return 'lt';
 }
 
 function getBinPath()
