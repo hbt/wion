@@ -166,9 +166,14 @@ function getDeviceName()
     return 'lt';
 }
 
+function getBinPath()
+{
+    return __DIR__ . '/../bin/';
+}
+
 function getWionStatus()
 {
-    $ret   = shell_exec(sprintf('/home/hassen/config/scripts/private/bin/%sst', getDeviceName()));
+    $ret   = shell_exec(sprintf('%s%sst', getBinPath(), getDeviceName()));
     $isOn  = stripos($ret, 'rw_byte: 1') !== false;
     $isOff = stripos($ret, 'rw_byte: 0') !== false;
 
@@ -192,7 +197,8 @@ function turnOn()
     logmsg('Turn on');
     while(!getWionStatus())
     {
-        shell_exec(sprintf('/home/hassen/config/scripts/private/bin/%s1', getDeviceName()));
+//        shell_exec(sprintf('/home/hassen/config/scripts/private/bin/%s1', getDeviceName()));
+        $ret   = shell_exec(sprintf('%s%s1', getBinPath(), getDeviceName()));
         logmsg('On');
         sleep(5);
     }
@@ -205,7 +211,8 @@ function turnOff()
     logmsg('Turn off');
     while(getWionStatus())
     {
-        shell_exec(sprintf('/home/hassen/config/scripts/private/bin/%s0', getDeviceName()));
+//        shell_exec(sprintf('/home/hassen/config/scripts/private/bin/%s0', getDeviceName()));
+        $ret   = shell_exec(sprintf('%s%s0', getBinPath(), getDeviceName()));
         logmsg('Off');
         sleep(5);
     }
