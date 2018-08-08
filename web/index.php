@@ -42,7 +42,7 @@ if(array_key_exists('cmd', $_GET))
 <br/>
 <br/>
 
-<a href="./index.php?cmd=start">STOP Timer</a>
+<a href="./index.php?cmd=stop">STOP Timer</a>
 <br/>
 <br/>
 

@@ -19,6 +19,12 @@ function main($argv)
             assert(file_exists(getStateFile()));
         },
 
+        'on'            => function ()
+        {
+            turnOn();
+            assert(getState()['ac']);
+        },
+
         'curl'            => function ()
         {
             echo shell_exec('curl http://localhost:8989/index.php?cmd=set%s2030%s2030');
