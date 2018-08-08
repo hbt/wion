@@ -9,7 +9,8 @@ use std::thread;
 use std::time;
 
 fn main() {
-    let switch_ip = "192.168.0.102"; // TODO(hbt): replace by env var
+
+    let switch_ip = "192.168.0.104"; // TODO(hbt): replace by env var
 
     // discover devices - Done
     if false {
@@ -23,13 +24,13 @@ fn main() {
     let msg_sock = wion_comm::msg_listener_setup();
 
     // get switch status -- Done
-    if true {
+    if false {
         wion_comm::get_switch_status( switch_ip, &msg_sock);
         thread::sleep(time::Duration::from_millis(5000));
     }
 
     // toggle a switch by IP addr -- DONE
-    if true {
+    if false {
         wion_comm::send_switch_toggle(true,  switch_ip, &msg_sock);
         thread::sleep(time::Duration::from_millis(5000));
         wion_comm::send_switch_toggle(false,  switch_ip, &msg_sock);
