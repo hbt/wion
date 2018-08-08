@@ -17,6 +17,7 @@ function execCmd($argv)
 
 function setInterval($iton, $itoff)
 {
+    logmsg('set interval');
     assert(is_numeric($iton) && $iton > 0);
     assert(is_numeric($itoff) && $itoff > 0);
     
@@ -228,3 +229,20 @@ function syncState($mstate)
 
     return $ret;
 }
+
+function timerCLI($argv)
+{
+    init();
+
+    if(count($argv) === 1)
+    {
+        run();
+    }
+    else
+    {
+        execCmd($argv);
+    }
+
+    logmsg('exit');
+}
+

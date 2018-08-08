@@ -15,6 +15,15 @@ steps to get wion device to toggle:
 - light should toggle 
 
 
+cli  timer based version:
+
+- view web/main.php
+
+
+web  timer based version:
+
+- view web/index.php
+
 
 Original Documentation
 

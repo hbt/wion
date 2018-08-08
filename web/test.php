@@ -7,7 +7,9 @@ function main($argv)
 {
     configAsserts();
 
-    $tests = [
+    $oneTest = '';
+    
+    $tests   = [
 
         'clean and init ' => function ()
         {
@@ -15,6 +17,12 @@ function main($argv)
             assert(!file_exists(getStateFile()));
             runMain();
             assert(file_exists(getStateFile()));
+        },
+
+        'curl'            => function ()
+        {
+            echo shell_exec('curl http://localhost:8989/index.php?cmd=set%s2030%s2030');
+            assert(getState()['interval'] == [30 * 60, 30 * 60]);
         },
 
         'start timer'     => function ()
@@ -26,7 +34,7 @@ function main($argv)
             assert(getWionStatus());
         },
 
-        'stop timer'     => function ()
+        'stop timer'      => function ()
         {
             runMain(['stop']);
             $state = getState();
@@ -36,20 +44,28 @@ function main($argv)
         },
 
 
-        'set interval'     => function ()
+        'set interval'    => function ()
         {
             runMain(['set', '15', '35']);
             $state = getState();
             assert(getState()['interval'] == [15 * 60, 35 * 60]);
-            
         },
+
 
     ];
 
-    foreach($tests as $title => $test)
+    if($oneTest)
     {
-        echo $title . "\n\n";
-        echo $test();
+        $tests[$oneTest]();
+    }
+    else
+    {
+
+        foreach($tests as $title => $test)
+        {
+            echo $title . "\n\n";
+            echo $test();
+        }
     }
 }
 
