@@ -54,6 +54,10 @@ if(array_key_exists('cmd', $_GET))
     <br/>
     <br/>
 
+    <a href="./index.php?cmd=set 30 10">Set 30 10</a>
+    <br/>
+    <br/>
+
     <a href="./index.php?cmd=set 10 20">Set 10 20</a>
     <br/>
     <br/>
