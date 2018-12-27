@@ -1,18 +1,29 @@
 Fork:
 
-steps to get wion device to toggle: 
+steps to get wion device to work from scratch: 
 
-- docker build
-- change ip address to point to the wion device in src/main.rs:12
-- uncomment discovery process to find the device ID in src/main.rs:15
-- compile and run to find the device id e.g "ECO-7808276B"
+- dc build
+- `./target/release/wion 192.168.0.102 light discover` -- the options dont matter. as long as discover is used
+- find the device id e.g "ECO-7808276B"
 - convert device id to hex code using http://www.online-toolz.com/tools/text-hex-convertor.php 
 - example: "ECO-7808276B" converts to "45434f2d3738303832373642" and formatted to "0x45, 0x43, 0x4f, 0x2d, 0x37, 0x38, 0x30, 0x38, 0x32, 0x37, 0x36, 0x42"
-- insert hex code in src/wion_comm.rs:380 and src/wion_comm.rs:401
-- comment back line src/main.rs:15
-- uncomment code for toggling src/main.rs:32
-- compile and run
-- light should toggle 
+- hexcodes are hardcoded in src/wion_comm.rs:473
+- compile and run `dc build`
+- light should toggle (view usage below)
+
+cli usage:
+
+- dc build
+- `./target/release/wion 192.168.0.102 light on`
+- commands are: 
+  - discover
+  - status
+  - on 
+  - off
+- device names are: 
+  - light
+  - ac
+  - eco
 
 
 cli  timer based version:
