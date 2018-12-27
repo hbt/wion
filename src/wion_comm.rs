@@ -471,6 +471,7 @@ fn pack_header(head: Header) -> Box<Vec<u8>> {
 }
 
 fn get_default_header() -> Header {
+    // TODO(hbt) ENHANCE abstract and accept as cli arg
     let mut head: Header = Default::default();
     let name = std::env::args().into_iter().skip(2).next().unwrap();
     if (name == "light") {
